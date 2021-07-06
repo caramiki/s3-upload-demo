@@ -7,7 +7,11 @@
     "upload-images": "node scripts/upload-images.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "carami",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caramiki/s3-upload-demo"
+  },
+  "author": "caramiki",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.939.0",
