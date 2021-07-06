@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .kitties {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -0.5rem;
+    }
+
+    .kitty {
+      height: 200px;
+      margin: 0.5rem;
+    }
+
+    .kitty img {
+      width: auto;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Kitties</h1>
+
+    <h2>Local Kitties</h2>
+    <div class="kitties">
+      <div class="kitty">
+        <img src="images/black-kitty.jpeg">
+      </div>
+      <div class="kitty">
+        <img src="images/calico-kitty.jpg">
+      </div>
+      <div class="kitty">
+        <img src="images/gray-kitty.jpeg">
+      </div>
+      <div class="kitty">
+        <img src="images/green-kitty-eyes.jpeg">
+      </div>
+      <div class="kitty">
+        <img src="images/siamese-kitty.jpeg">
+      </div>
+    </div>
+
+    <h2>S3 Kitties</h2>
+    <!--
+      Replace AWS_BUCKET with your bucket name, AWS_REGION with your region, and UPLOADS_DIR/ with the folder
+      you're uploading your files to.
+    -->
+    <div class="kitties">
+      <div class="kitty">
+        <img src="https://AWS_BUCKET.s3.AWS_REGION.amazonaws.com/UPLOADS_DIR/black-kitty.jpeg">
+      </div>
+      <div class="kitty">
+        <img src="https://AWS_BUCKET.s3.AWS_REGION.amazonaws.com/UPLOADS_DIR/calico-kitty.jpg">
+      </div>
+      <div class="kitty">
+        <img src="https://AWS_BUCKET.s3.AWS_REGION.amazonaws.com/UPLOADS_DIR/gray-kitty.jpeg">
+      </div>
+      <div class="kitty">
+        <img src="https://AWS_BUCKET.s3.AWS_REGION.amazonaws.com/UPLOADS_DIR/green-kitty-eyes.jpeg">
+      </div>
+      <div class="kitty">
+        <img src="https://AWS_BUCKET.s3.AWS_REGION.amazonaws.com/UPLOADS_DIR/siamese-kitty.jpeg">
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -116,16 +116,18 @@ s3.deleteObject({ Key: 'uploads/image3.jpg' }, (err, data) => {
 
 Demo in [scripts/upload-image.js](https://github.com/caramiki/s3-upload-demo/blob/main/scripts/upload-images.js)
 
-After configuring `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_BUCKET` in your `.env`, you can upload images via this command:
+1. Configure `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_BUCKET` in your `.env`.
+1. Copy `index.html.example` to `index.html`. In the image sources, replace `AWS_BUCKET` with your bucket name, `AWS_REGION` with your region, and `UPLOADS_DIR/` with the folder you're uploading your files to. When you open the page in your browser, the local kitties should appear and the s3 kitties should be broken images.
+1. Upload images via this command:
+    ```
+    npm run upload-images
+    ```
 
-```
-npm run upload-images
-```
+    This is a custom command in `package.json`; it's another way of saying:
 
-This is a custom command in `package.json`; it's another way of saying:
+    ```
+    node scripts/upload-images.js
+    ```
 
-```
-node scripts/upload-images.js
-```
-
-which is how you run arbitrary javascript files via node.
+    which is how you run arbitrary javascript files via node.
+1. Reload `index.html` in your browser (you might need to hard refresh). S3 kitties should appear! Hooray!
