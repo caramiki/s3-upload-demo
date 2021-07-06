@@ -2,18 +2,16 @@
 
 ## What you need
 
-Install these node packages:
-
-- `aws-sdk`
-- `dotenv` - for reading environment variables
-
-Set these environment variables:
-
-```
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_BUCKET=
-```
+1. You should have [Node and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed.
+1. Run `npm install`. It will install these packages:
+    - `aws-sdk`
+    - `dotenv` - for reading environment variables
+1. Copy `.env.example` to `.env` and fill out the environment variables:
+    ```
+    AWS_ACCESS_KEY_ID=
+    AWS_SECRET_ACCESS_KEY=
+    AWS_BUCKET=
+    ```
 
 ## The AWS S3 API
 
@@ -113,3 +111,21 @@ s3.deleteObject({ Key: 'uploads/image3.jpg' }, (err, data) => {
   // optionally do things with err and/or data
 });
 ```
+
+### Putting it all together!
+
+Demo in [scripts/upload-image.js](https://github.com/caramiki/s3-upload-demo/blob/main/scripts/upload-images.js)
+
+After configuring `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_BUCKET` in your `.env`, you can upload images via this command:
+
+```
+npm run upload-images
+```
+
+This is a custom command in `package.json`; it's another way of saying:
+
+```
+node scripts/upload-images.js
+```
+
+which is how you run arbitrary javascript files via node.
